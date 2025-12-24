@@ -1,0 +1,262 @@
+/* ALAM Architectural Studio - Core Styles */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+    /* Color Palette - Premium Architectural Tone */
+    --primary-color: #2c2c2c;
+    /* Charcoal */
+    --secondary-color: #8c7b6c;
+    /* Muted Gold/Bronze */
+    --accent-color: #f4f4f4;
+    /* Off-white/Concrete */
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-muted: #6c757d;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Manrope', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    margin-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0;
+    padding-top: 150px;
+    /* Increased to clear navbar */
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.5s;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.8s;
+}
+
+.btn-custom {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 2px solid var(--secondary-color);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1.1s;
+}
+
+.btn-custom:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+/* Section Styling */
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+}
+
+/* Services Cards */
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 0 30px;
+}
+
+footer h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+footer p,
+footer a {
+    color: #aaa;
+    font-weight: 300;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .navbar-collapse {
+        background-color: #ffffff;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
